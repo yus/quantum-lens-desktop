@@ -108,18 +108,29 @@ function createWindow() {
                 {
                     label: 'About Quantum Lens',
                     click: () => {
+                        const fs = require('fs');
+                        const path = require('path');
+                        const iconPath = path.join(__dirname, 'assets', 'icon.png');
+                        let iconData = null;
+                        if (fs.existsSync(iconPath)) {
+                            iconData = fs.readFileSync(iconPath).toString('base64');
+                        }
                         dialog.showMessageBox(mainWindow, {
                             type: 'info',
-                            title: 'About UQD Quantum Lens',
-                            message: 'Quantum Lens Audio Processor',
-                            detail: `Version 2.0.0\n\nBased on optical formulas from Aalener Optik-Formelrechner\nDivergent barrier: ∫ 1/|x| dx = ∞\n\nUniversity of Quantum Divergence Audio Lab`,
-                            buttons: ['OK']
+                            title: 'About Unlimited Quantum Divergence',
+                            message: 'UQD Quantum Lens Audio Processor',
+                            detail: `Version 2.1.0\n\nBased on optical formulas from Aalener Optik-Formelrechner\nDivergent barrier: ∫ 1/|x| dx = ∞ at p=1.0\n\n“Unlimited Quantum Divergence” — poetry by @yus\n\nUniversity of Quantum Divergence Audio Lab`,
+                            buttons: ['OK'],
+                            icon: iconData ? Buffer.from(iconData, 'base64') : null
                         });
                     }
                 },
                 {
                     label: 'Documentation',
-                    click: () => require('electron').shell.openExternal('https://github.com/yus/quantum-lens')
+                    click: () => {
+                        const { shell } = require('electron');
+                        shell.openExternal('https://github.com/yus/quantum-lens-desktop/blob/main/README.md');
+                    }
                 }
             ]
         }
@@ -137,7 +148,9 @@ app.whenReady().then(() => {
     
     // IPC handlers
     ipcMain.handle('process-audio', async (event, bufferData, params) => {
-        return await audioEngine.processBuffer(bufferData, params);
+        console.log('Processing audio with params:', params);
+        const result = await audioEngine.processBuffer(bufferData, params);
+        return Array.from(result);
     });
     
     ipcMain.handle('get-transfer-points', async (event, params) => {
