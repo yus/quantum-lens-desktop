@@ -12,6 +12,15 @@ const playbackArea = document.getElementById('playbackArea');
 const freqPlot = document.getElementById('freqPlot');
 const waveformCanvas = document.getElementById('waveformCanvas');
 
+// Material display names for caption
+const materials = [
+    { value: 'cr39', name: 'CR-39' },
+    { value: 'poly', name: 'polycarb' },
+    { value: 'high', name: 'high-index' },
+    { value: 'crown', name: 'crown' },
+    { value: 'flint', name: 'flint' }
+];
+
 // Preset groups from Aalener Optik-Formelrechner
 const presetGroups = {
     'Ophthalmic Plastics': [
@@ -172,7 +181,7 @@ function updateKnobs() {
 function makeKnob(knobId, param, min, max, updateCallback) {
     const canvas = document.getElementById(knobId);
     let dragging = false;
-    
+
     canvas.onmousedown = (e) => {
         dragging = true;
         const rect = canvas.getBoundingClientRect();
@@ -182,6 +191,7 @@ function makeKnob(knobId, param, min, max, updateCallback) {
             const val = min + (1 - norm) * (max - min);
             params[param] = Math.min(max, Math.max(min, val));
             updateKnobs();
+            updatePlotCaption();     // <-- add this
             if (updateCallback) updateCallback();
         };
         update(e);
@@ -195,6 +205,17 @@ function makeKnob(knobId, param, min, max, updateCallback) {
 }
 
 // ========== Frequency Response Plot ==========
+
+// fix: Added to update the plot captions
+function updatePlotCaption() {
+    const material = materials.find(m => m.value === params.material);
+    const modeLabel = currentMode === 'lens' ? '🧹 lens' : '⚡ barrier';
+    const caption = `${modeLabel} | ${material?.name || 'high-index'} | cut=${Math.round(params.cutoff)}Hz | p=${params.sharpness.toFixed(2)} | t=${params.thickness.toFixed(1)}mm | c=${params.coating.toFixed(1)}%`;
+    
+    const captionSpan = document.getElementById('plotCaption');
+    if (captionSpan) captionSpan.textContent = caption;
+}
+
 async function updateTransferPlot() {
     const ctx = freqPlot.getContext('2d');
     const w = freqPlot.width = 900;
@@ -233,6 +254,9 @@ async function updateTransferPlot() {
         ctx.font = '10px monospace';
         ctx.fillText(`cutoff: ${Math.round(params.cutoff)} Hz`, cutoffX - 50, h - 15);
         ctx.fillText(`mode: ${currentMode}`, 10, h - 15);
+
+		// Update plot caption
+        updatePlotCaption();
     } catch (err) {
         console.error('Plot error:', err);
     }
@@ -455,6 +479,7 @@ lensModeBtn.onclick = () => {
     barrierModeBtn.classList.remove('active');
     updateKnobs();
     updateTransferPlot();
+    updatePlotCaption();     // <-- add
 };
 
 barrierModeBtn.onclick = () => {
@@ -464,12 +489,14 @@ barrierModeBtn.onclick = () => {
     lensModeBtn.classList.remove('active');
     updateKnobs();
     updateTransferPlot();
+    updatePlotCaption();     // <-- add
 };
 
 // ========== Material Change ==========
 materialSelect.onchange = (e) => {
     params.material = e.target.value;
     updateTransferPlot();
+    updatePlotCaption();     // <-- add
 };
 
 // ========== Knob Initialization ==========
