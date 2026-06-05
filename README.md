@@ -1,12 +1,12 @@
 # quantum-lens-desktop  
-UQD Lens filter is for Unlimited Quantum Divergence Lens filter, Audioprocessing Electron app, v 2.1.0
+UQD Lens filter is for Unlimited Quantum Divergence Lens filter, Audioprocessing Electron app, v 2.1.0  
 
-Yet at UQD creation, an app was tested working only on Windows. Build on your own risque.
-UI working satisfiable, but in standard window menues still some minor bugs.
+Yet at UQD creation, an app was tested working only on Windows. Build on your own risque.  
+UI working satisfiable, but in standard window menues still some minor bugs.  
 
-Idea of app coming from exploration Quantum Divergence Barrier at partially odd formula
-& Optical Relative Transmission as part of Aalener Optik-Formelrechner (GPL3),
-legendary works of Emma Neuter and strongest will of my mom and all your best friends. 🌿💮
+Idea of app coming from exploration Quantum Divergence Barrier at partially odd formula  
+& Optical Relative Transmission as part of Aalener Optik-Formelrechner (GPL3),  
+legendary works of Emma Neuter and strongest will of my mom and all your best friends. 🌿💮  
 
 <img src="assets/icon.png" align="center" width="256px" />  
 
