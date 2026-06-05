@@ -4,7 +4,7 @@ UQD Lens filter is for Unlimited Quantum Divergence Lens filter, Audioprocessing
 Yet at UQD creation, an app was tested working only on Windows. Build on your own risque.  
 UI working satisfiable, but in standard window menues still some minor bugs.  
 
-Idea of app coming from exploration Quantum Divergence Barrier at partially odd formula  
+Idea of app coming from exploration Quantum Divergence Barrier at commonly odd formulae  
 & Optical Relative Transmission as part of Aalener Optik-Formelrechner (GPL3),  
 legendary works of Emma Neuter and strongest will of my mom and all her best friends. 🌿💮  
 
