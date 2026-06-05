@@ -5,7 +5,7 @@ Yet at UQD creation, an app was tested working only on Windows. Build on your ow
 UI working satisfiable, but in standard window menues still some minor bugs.  
 
 Idea of app coming from exploration Quantum Divergence Barrier at commonly odd formulae  
-& Optical Relative Transmission as part of Aalener Optik-Formelrechner (GPL3),  
+& Optical Relative Transmission part of Aalener Optik-Formelrechner thesis,  
 legendary works of Emma Neuter and strongest will of my mom and all her best friends. 🌿💮  
 
 <img src="assets/icon.png" align="center" width="256px" />  
