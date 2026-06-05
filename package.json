@@ -1,7 +1,7 @@
 {
   "name": "uqd-quantum-lens",
-  "version": "2.0.0",
-  "description": "Quantum Lens Audio Processor - Optical raytracing + divergent barrier ∫1/|x|dx",
+  "version": "2.1.0",
+  "description": "UQD Lens - Unlimited Quantum Divergence Lens Audio Processor - Optical raytracing + divergent barrier ∫1/|x|dx",
   "author": "@yus",
   "license": "MIT",
   "main": "main.js",
@@ -14,12 +14,12 @@
     "pack": "electron-builder --dir"
   },
   "dependencies": {
-    "electron": "^28.0.0",
-    "wavefile": "^11.0.0",
-    "fft-js": "^0.0.12"
+    "fft-js": "^0.0.12",
+    "wavefile": "^11.0.0"
   },
   "devDependencies": {
-    "electron-builder": "^24.6.4"
+    "electron": "^42.3.3",
+    "electron-builder": "^26.8.1"
   },
   "build": {
     "appId": "com.uqd.quantumlens",
@@ -35,8 +35,7 @@
     ],
     "win": {
       "target": "nsis",
-      "icon": "assets/icon.ico",
-      "publisherName": "UQD Audio Lab"
+      "icon": "assets/icon.ico"
     },
     "mac": {
       "target": "dmg",
