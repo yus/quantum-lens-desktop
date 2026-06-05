@@ -1,0 +1,203 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #121212;
+    font-family: 'Segoe UI', -apple-system, 'Roboto Mono', monospace;
+    color: #cccccc;
+}
+
+.app-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #2a2a2a;
+    padding-bottom: 15px;
+}
+
+h1 {
+    font-size: 24px;
+    color: #dd8800;
+    letter-spacing: -0.5px;
+    font-weight: 500;
+}
+
+.subtitle {
+    font-size: 11px;
+    color: #666;
+    font-family: monospace;
+    margin-top: 5px;
+}
+
+.main-panel {
+    background: #1a1a1a;
+    border: 1px solid #2a2a2a;
+    padding: 25px;
+}
+
+.mode-bar {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 25px;
+}
+
+.mode-btn {
+    background: #2a2a2a;
+    border: none;
+    padding: 8px 20px;
+    color: #aaa;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 500;
+    transition: all 0.1s;
+}
+
+.mode-btn.active {
+    background: #dd8800;
+    color: #121212;
+}
+
+.plot-container {
+    margin: 20px 0;
+}
+
+#freqPlot {
+    width: 100%;
+    height: auto;
+    background: #0a0a0a;
+    border: 1px solid #2a2a2a;
+    cursor: crosshair;
+}
+
+.plot-label {
+    text-align: center;
+    font-size: 10px;
+    color: #666;
+    margin-top: 5px;
+}
+
+.controls-row {
+    display: flex;
+    justify-content: space-around;
+    margin: 35px 0 25px;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.knob {
+    text-align: center;
+}
+
+.knob canvas {
+    cursor: pointer;
+    transition: transform 0.05s;
+}
+
+.knob canvas:active {
+    transform: scale(0.98);
+}
+
+.knob-label {
+    font-size: 10px;
+    color: #888;
+    margin-top: 8px;
+    letter-spacing: 1px;
+}
+
+.knob-value {
+    font-size: 11px;
+    color: #dd8800;
+    font-family: monospace;
+}
+
+.material-row {
+    margin: 25px 0 20px;
+}
+
+.material-row label {
+    display: block;
+    font-size: 11px;
+    margin-bottom: 6px;
+    color: #888;
+}
+
+select {
+    width: 100%;
+    background: #2a2a2a;
+    border: 1px solid #3a3a3a;
+    padding: 8px 12px;
+    color: #ccc;
+    font-size: 11px;
+    font-family: monospace;
+    cursor: pointer;
+}
+
+.file-row {
+    display: flex;
+    gap: 12px;
+    margin: 25px 0 15px;
+    flex-wrap: wrap;
+}
+
+button {
+    background: #2a2a2a;
+    border: 1px solid #3a3a3a;
+    padding: 10px 20px;
+    color: #ccc;
+    cursor: pointer;
+    font-size: 11px;
+    font-weight: 500;
+    transition: all 0.1s;
+}
+
+button.primary {
+    background: #dd8800;
+    border-color: #aa6600;
+    color: #121212;
+}
+
+button:hover {
+    filter: brightness(1.1);
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+.status {
+    background: #0f0f0f;
+    padding: 10px;
+    font-size: 10px;
+    margin: 15px 0;
+    border-left: 2px solid #dd8800;
+    font-family: monospace;
+}
+
+.oscilloscope {
+    margin-top: 20px;
+}
+
+#waveformCanvas {
+    width: 100%;
+    height: auto;
+    background: #0a0a0a;
+    border: 1px solid #2a2a2a;
+}
+
+footer {
+    text-align: center;
+    font-size: 9px;
+    color: #444;
+    margin-top: 30px;
+    padding-top: 15px;
+    border-top: 1px solid #2a2a2a;
+    line-height: 1.5;
+}
