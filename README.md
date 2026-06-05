@@ -1,7 +1,7 @@
 # quantum-lens-desktop  
 UQD Lens filter is for Unlimited Quantum Divergence Lens filter, Audioprocessing Electron app  
 
-<img src="assets/icon.png" style="align,center" width="256px"/>  
+<img src="assets/icon.png" align="center" width="256px" />  
 
 # ⚛️ UQD Lens Audio Processor  
 
@@ -20,20 +20,20 @@ Based on optical formulas from Aalener Optik-Formelrechner.
 
 ## Install & Run  
 
-\`\`\`bash  
+```bash  
 git clone https://github.com/yus/quantum-lens-desktop.git  
 cd quantum-lens-desktop  
 npm install  
 npm start  
-\`\`\`  
+```  
 
 ## Build Standalone App  
 
-\`\`\`bash  
+```bash  
 npm run build:win   # Windows .exe  
 npm run build:mac   # macOS .dmg  
 npm run build:linux # Linux AppImage  
-\`\`\`  
+```  
 
 ## License  
 MIT + Aalener Optik-Formelrechner (GPL v3)  
