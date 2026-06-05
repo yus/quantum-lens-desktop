@@ -9,7 +9,7 @@
 <body>
     <div class="app-container">
         <header>
-            <h1>⚛️ UQD QUANTUM LENS</h1>
+            <h1>⚛️ UQD LENS - Unlimited Quantum Divergence</h1>
             <div class="subtitle">optical raytracing + divergent integral ∫ 1/|x| dx = ∞</div>
         </header>
         
@@ -61,6 +61,18 @@
                     <option value="flint">Flint glass (n=1.805, T₀=97.0%)</option>
                 </select>
             </div>
+
+            <!-- Settings / Presets Section -->
+            <div class="settings-section" style="margin-top: 20px; border-top: 1px solid #2a2a2a; padding-top: 15px;">
+                <button id="settingsToggleBtn" style="width: auto; padding: 4px 12px;">⚙️ AALENER PRESETS</button>
+                <div id="settingsPanel" style="display: none; margin-top: 10px; background: #0f0f0f; padding: 10px;">
+                    <div style="font-size: 11px; margin-bottom: 8px;">Optical Glass Presets (Aalener database):</div>
+                    <div id="presetGroups" style="display: flex; flex-wrap: wrap; gap: 8px;">
+                        <!-- Will be populated by JS -->
+                    </div>
+                    <div id="presetInfo" style="font-size: 9px; color: #666; margin-top: 8px;"></div>
+                </div>
+            </div>
             
             <!-- File & Processing -->
             <div class="file-row">
@@ -82,7 +94,7 @@
         </div>
         
         <footer>
-            University of Quantum Divergence · based on Aalener Optik-Formelrechner (GPL v3)<br>
+            Unlimited Quantum Divergence · based on Aalener Optik-Formelrechner (GPL v3)<br>
             Divergent barrier: ∫ 1/|x| dx = ∞ at p=1.0
         </footer>
     </div>
