@@ -9,7 +9,7 @@
 <body>
     <div class="app-container">
         <header>
-            <h1>⚛️ UQD LENS - Unlimited Quantum Divergence</h1>
+            <h1>⚛️ UQD QUANTUM LENS</h1>
             <div class="subtitle">optical raytracing + divergent integral ∫ 1/|x| dx = ∞</div>
         </header>
         
@@ -23,7 +23,12 @@
             <!-- Frequency Response Plot -->
             <div class="plot-container">
                 <canvas id="freqPlot" width="900" height="250"></canvas>
-                <div class="plot-label">Frequency (Hz) →</div>
+                <div class="plot-label">
+                    Frequency (Hz) →
+                    <span id="plotCaption" style="float: right; font-family: monospace; color: #dd8800;">
+                        lens | n=1.67 | cut=3800Hz | p=1.0
+                    </span>
+                </div>
             </div>
             
             <!-- Knob Controls -->
@@ -94,7 +99,7 @@
         </div>
         
         <footer>
-            Unlimited Quantum Divergence · based on Aalener Optik-Formelrechner (GPL v3)<br>
+            Utilized Quantum Divergence · based on Aalener Optik-Formelrechner (GPL v3)<br>
             Divergent barrier: ∫ 1/|x| dx = ∞ at p=1.0
         </footer>
     </div>
