@@ -1,7 +1,7 @@
 # quantum-lens-desktop  
 UQD Lens filter is for Unlimited Quantum Divergence Lens filter, Audioprocessing Electron app  
 
-<img src="assets/icon.png" align="center" />  
+<img src="assets/icon.png" align="center" width="256px"/>  
 
 # ⚛️ UQD Lens Audio Processor  
 
