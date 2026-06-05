@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UQD Quantum Lens Audio Processor</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <h1>⚛️ UQD QUANTUM LENS</h1>
+            <div class="subtitle">optical raytracing + divergent integral ∫ 1/|x| dx = ∞</div>
+        </header>
+        
+        <div class="main-panel">
+            <!-- Mode Toggle -->
+            <div class="mode-bar">
+                <button id="lensModeBtn" class="mode-btn active">🧹 LENS MODE (clean / noise reduction)</button>
+                <button id="barrierModeBtn" class="mode-btn">⚡ BARRIER MODE (divergent / resonant)</button>
+            </div>
+            
+            <!-- Frequency Response Plot -->
+            <div class="plot-container">
+                <canvas id="freqPlot" width="900" height="250"></canvas>
+                <div class="plot-label">Frequency (Hz) →</div>
+            </div>
+            
+            <!-- Knob Controls -->
+            <div class="controls-row">
+                <div class="knob">
+                    <canvas id="cutoffKnob" width="80" height="80"></canvas>
+                    <div class="knob-label">CUTOFF</div>
+                    <div class="knob-value" id="cutoffVal">3800 Hz</div>
+                </div>
+                <div class="knob" id="sharpKnobContainer">
+                    <canvas id="sharpKnob" width="80" height="80"></canvas>
+                    <div class="knob-label">SHARPNESS p</div>
+                    <div class="knob-value" id="sharpVal">1.00</div>
+                </div>
+                <div class="knob">
+                    <canvas id="thickKnob" width="80" height="80"></canvas>
+                    <div class="knob-label">THICKNESS</div>
+                    <div class="knob-value" id="thickVal">2.2 mm</div>
+                </div>
+                <div class="knob">
+                    <canvas id="coatKnob" width="80" height="80"></canvas>
+                    <div class="knob-label">COATING</div>
+                    <div class="knob-value" id="coatVal">0.8 %</div>
+                </div>
+            </div>
+            
+            <!-- Material Selector -->
+            <div class="material-row">
+                <label>🔬 LENS MATERIAL (Aalener optical database)</label>
+                <select id="materialSelect">
+                    <option value="cr39">CR-39 plastic (n=1.498, T₀=92%)</option>
+                    <option value="poly">Polycarbonate (n=1.586, T₀=89.5%)</option>
+                    <option value="high" selected>High-index glass (n=1.670, T₀=98.5%)</option>
+                    <option value="crown">Crown glass (n=1.523, T₀=99.2%)</option>
+                    <option value="flint">Flint glass (n=1.805, T₀=97.0%)</option>
+                </select>
+            </div>
+            
+            <!-- File & Processing -->
+            <div class="file-row">
+                <button id="openFileBtn">📁 OPEN AUDIO FILE</button>
+                <button id="processBtn" class="primary">🌀 APPLY QUANTUM FILTER</button>
+                <button id="exportBtn">💾 EXPORT WAV</button>
+            </div>
+            
+            <!-- Status -->
+            <div id="status" class="status">✅ Ready. Load an audio file (WAV, MP3, FLAC, OGG).</div>
+            
+            <!-- Playback Area -->
+            <div id="playbackArea"></div>
+            
+            <!-- Waveform -->
+            <div class="oscilloscope">
+                <canvas id="waveformCanvas" width="900" height="80"></canvas>
+            </div>
+        </div>
+        
+        <footer>
+            University of Quantum Divergence · based on Aalener Optik-Formelrechner (GPL v3)<br>
+            Divergent barrier: ∫ 1/|x| dx = ∞ at p=1.0
+        </footer>
+    </div>
+    
+    <script src="renderer.js"></script>
+</body>
+</html>
